@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>RWA – Tasks & Data Overview</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="page">
+
+    <!-- Top Navigation -->
+    <header class="top-nav">
+      <div class="nav-inner">
+        <div class="nav-logo">RWA Liquidity Lab</div>
+        <nav class="nav-links">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="tasks.html" class="nav-link active">Tasks &amp; Data Overview</a>
+          <a href="visualizations.html" class="nav-link">Visualizations</a>
+          <a href="conclusion.html" class="nav-link">Conclusion</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Tasks Section -->
+    <section class="section">
+      <h1 class="section-title">Tasks</h1>
+      <p class="section-subtitle">
+        This project investigates how macro liquidity conditions drive capital allocation in DeFi's RWA sector
+        through six key tasks:
+      </p>
+
+      <ul class="task-list">
+        <li><strong>Liquidity conditions:</strong> M2-based liquidity gauge</li>
+        <li><strong>Stablecoin impact:</strong> Market cap vs. protocol growth</li>
+        <li><strong>Interest rate effects:</strong> Treasury vs. Private Credit allocation</li>
+        <li><strong>Chain adoption:</strong> Multi-chain deployment patterns</li>
+        <li><strong>Market structure:</strong> Protocol concentration metrics</li>
+        <li><strong>Preference shifts:</strong> Asset type correlations over time</li>
+      </ul>
+    </section>
+
+    <!-- Data Overview -->
+    <section class="section">
+      <h1 class="section-title">Data Overview</h1>
+      <p class="section-subtitle">
+        Our analysis combines data from DeFiLlama and FRED APIs to analyze the RWA ecosystem and its relationship to
+        macroeconomic conditions. DeFiLlama tracks decentralized finance protocols, while FRED provides Federal
+        Reserve economic data.
+      </p>
+
+      <div class="data-summary-grid">
+        <div class="data-card">
+          <h2>Scale</h2>
+          <ul>
+            <li>59,761 daily observations</li>
+            <li>5 years of data</li>
+            <li>8 quantitative &amp; 4 categorical variables</li>
+            <li>12 total features</li>
+          </ul>
+        </div>
+        <div class="data-card">
+          <h2>Coverage</h2>
+          <ul>
+            <li>9 RWA protocols</li>
+            <li>21 blockchain networks</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Collapsible Data Dictionary -->
+      <details class="data-dictionary">
+        <summary>
+          <span class="summary-label">Expand Data Dictionary</span>
+          <span class="summary-arrow">▼</span>
+        </summary>
+
+        <div class="data-dictionary-inner">
+
+          <h2>Filename: <code>final_rwa_data.csv</code></h2>
+          <div class="table-wrapper">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Variable</th>
+                  <th>Type</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>date</code></td>
+                  <td>Quantitative</td>
+                  <td>Daily timestamp (YYYY-MM-DD)</td>
+                </tr>
+                <tr>
+                  <td><code>protocol</code></td>
+                  <td>Categorical</td>
+                  <td>RWA protocol name (9 protocols tracked)</td>
+                </tr>
+                <tr>
+                  <td><code>tvl</code></td>
+                  <td>Quantitative</td>
+                  <td>Total value locked (USD)</td>
+                </tr>
+                <tr>
+                  <td><code>chain</code></td>
+                  <td>Categorical</td>
+                  <td>Blockchain network (Ethereum, Solana, Polygon, etc.)</td>
+                </tr>
+                <tr>
+                  <td><code>asset_type</code></td>
+                  <td>Categorical</td>
+                  <td>Protocol categories (Treasury, Private Credit, or Diversified)</td>
+                </tr>
+                <tr>
+                  <td><code>usdc_mcap</code></td>
+                  <td>Quantitative</td>
+                  <td>USDC market capitalization (USD)</td>
+                </tr>
+                <tr>
+                  <td><code>usdt_mcap</code></td>
+                  <td>Quantitative</td>
+                  <td>USDT market capitalization (USD)</td>
+                </tr>
+                <tr>
+                  <td><code>dai_mcap</code></td>
+                  <td>Quantitative</td>
+                  <td>DAI market capitalization (USD)</td>
+                </tr>
+                <tr>
+                  <td><code>total_stablecoin_mcap</code></td>
+                  <td>Quantitative</td>
+                  <td>Sum of USDC, USDT, and DAI market caps</td>
+                </tr>
+                <tr>
+                  <td><code>treasury_yield</code></td>
+                  <td>Quantitative</td>
+                  <td>10-Year U.S. Treasury yield (%)</td>
+                </tr>
+                <tr>
+                  <td><code>m2_supply</code></td>
+                  <td>Quantitative</td>
+                  <td>M2 Money Supply (billions USD)</td>
+                </tr>
+                <tr>
+                  <td><code>tvl_share_by_chain</code></td>
+                  <td>Quantitative</td>
+                  <td>Protocol's share of TVL within each chain (%)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h2>Filename: <code>m2_liquidity_gauge.csv</code></h2>
+          <div class="table-wrapper">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Variable</th>
+                  <th>Type</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>date</code></td>
+                  <td>Quantitative</td>
+                  <td>Monthly timestamp (YYYY-MM-DD)</td>
+                </tr>
+                <tr>
+                  <td><code>m2_supply</code></td>
+                  <td>Quantitative</td>
+                  <td>M2 Money Supply (billions USD)</td>
+                </tr>
+                <tr>
+                  <td><code>m2_growth</code></td>
+                  <td>Quantitative</td>
+                  <td>Month-over-month M2 growth rate (%)</td>
+                </tr>
+                <tr>
+                  <td><code>liquidity_environment</code></td>
+                  <td>Categorical</td>
+                  <td>Liquidity condition classification (Contraction, Neutral, Growth, Expansion)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </details>
+    </section>
+
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>RWA – Visualizations</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+
+<body>
+  <div class="page">
+
+    <!-- Top Navigation -->
+    <header class="top-nav">
+      <div class="nav-inner">
+        <div class="nav-logo">RWA Liquidity Lab</div>
+        <nav class="nav-links">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="tasks.html" class="nav-link">Tasks &amp; Data Overview</a>
+          <a href="visualizations.html" class="nav-link active">Visualizations</a>
+          <a href="conclusion.html" class="nav-link">Conclusion</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Page Intro -->
+    <section class="section">
+      <h1 class="section-title">Visualizing RWA Liquidity, Capital Allocation, and Market Structure</h1>
+      <p class="section-subtitle">
+        The following dashboard walks through our four-part analytical framework for understanding how 
+        macroeconomic liquidity, yield environments, and multichain deployment shape the evolution of the Real-World 
+        Asset (RWA) sector. Each section pairs narrative explanation with visual evidence to show how capital enters 
+        the system, rotates between asset types, spreads across blockchains, and ultimately accumulates across RWA 
+        protocols.
+      </p>
+    </section>
+
+    <!-- =====================================================
+         1) Macro Liquidity & RWA Sector Expansion
+         ===================================================== -->
+    <section class="section">
+      <h2 class="section-subheading">1. Macro Liquidity & RWA Sector Expansion</h2>
+
+      <div class="narrative-block">
+        <p class="subtitle">
+          RWA adoption begins with liquidity. Stablecoins serve as the primary settlement asset across DeFi, and their 
+          total supply closely tracks the amount of “deployable capital” available for RWAs. When M2 money supply and 
+          stablecoin liquidity expand, investors have more on-chain dollars to allocate—fueling broad-based increases 
+          in RWA TVL. Early in the sector, TVL was small and concentrated in a few pioneer protocols. As liquidity 
+          surged in 2023–2025, growth accelerated across multiple platforms, laying the foundation for a more 
+          competitive ecosystem.
+        </p>
+      </div>
+
+      <!-- M2 Liquidity Gauge -->
+      <h3 class="section-subheading">Current Liquidity Regime (M2 Gauge)</h3>
+      <p class="subtitle">
+        Real-time classification of money supply growth. This provides macro context for understanding whether the 
+        environment supports or restricts capital inflows into RWAs.
+      </p>
+      <div class="chart-container">
+        <div id="m2-gauge"></div>
+        <div id="m2-gauge-legend" class="legend-row"></div>
+        <p id="m2-gauge-caption" class="subtitle caption"></p>
+      </div>
+
+      <!-- Stablecoin Supply vs RWA TVL -->
+      <h3 class="section-subheading">Stablecoin Supply vs RWA TVL</h3>
+      <p class="subtitle">
+        RWA sector growth is strongly linked to stablecoin liquidity. As total stablecoin market capitalization rises, 
+        RWA TVL scales alongside it—indicating that stablecoins function as a leading indicator for RWA expansion.
+      </p>
+      <div class="chart-container">
+        <svg id="viz1" width="900" height="420"></svg>
+      </div>
+
+      <!-- Correlation Heatmap -->
+      <h3 class="section-subheading">Correlation Between Macro Variables &amp; RWA TVL</h3>
+      <p class="subtitle">
+        Quantifies the relationships between RWA TVL and macro factors such as stablecoin supply, M2, and Treasury 
+        yields. Strong correlations reinforce the central role of liquidity in driving RWA adoption.
+      </p>
+      <div class="chart-container">
+        <iframe
+          src="assets/altair/altair_corr_heatmap.html"
+          width="900"
+          height="700"
+          style="border:none; border-radius:16px;">
+        </iframe>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         2) Yield Regimes & Asset Allocation Dynamics
+         ===================================================== -->
+    <section class="section">
+      <h2 class="section-subheading">2. Yield Regimes & Asset Allocation Dynamics</h2>
+
+      <div class="narrative-block">
+        <p class="subtitle">
+          Interest rates determine the relative attractiveness of different RWA categories. When Treasury yields are 
+          low, investors favor private credit protocols that offer higher returns, leading to TVL concentration in 
+          credit-focused platforms. As Treasury yields rise, capital rotates into safer, tokenized Treasury products— 
+          enabling new entrants like Ondo Finance and Superstate to capture significant market share. This rotation 
+          diversifies the RWA landscape and reduces reliance on a small number of private-credit protocols.
+        </p>
+      </div>
+
+      <!-- Yield Regimes vs Asset Mix -->
+      <h3 class="section-subheading">Yield Regimes vs RWA Asset Mix</h3>
+      <p class="subtitle">
+        Shows how the composition of RWA TVL across Private Credit, Treasury, and Diversified assets shifts with changes 
+        in the U.S. 10-Year Treasury yield. This reveals how investors dynamically reallocate capital in response to 
+        shifting macro incentives.
+      </p>
+      <div class="chart-container">
+        <svg id="viz5" width="900" height="420"></svg>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         3) Multichain Expansion & Capital Distribution
+         ===================================================== -->
+    <section class="section">
+      <h2 class="section-subheading">3. Multichain Expansion & Capital Distribution</h2>
+
+      <div class="narrative-block">
+        <p class="subtitle">
+          The RWA ecosystem originally launched on Ethereum, but as the sector matured, protocols expanded across 
+          multiple chains—from Solana and Avalanche to Mantle and newer RWA-focused networks. Multichain deployment 
+          lowers barriers to entry for new protocols, enables faster scaling, and reduces concentration risk by 
+          distributing TVL across different settlement environments.
+        </p>
+      </div>
+
+      <!-- Chain Allocation Over Time -->
+      <h3 class="section-subheading">Chain Allocation Over Time</h3>
+      <p class="subtitle">
+        A stacked time series showing how RWA TVL is distributed across major blockchains. This helps illustrate the 
+        sector's transition from Ethereum dominance to a more decentralized, multi-chain footprint.
+      </p>
+      <div class="chart-container">
+        <svg id="viz3" width="900" height="420"></svg>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         4) Protocol-Level Market Structure & Concentration
+         ===================================================== -->
+    <section class="section">
+      <h2 class="section-subheading">4. Protocol-Level Market Structure & Concentration</h2>
+
+      <div class="narrative-block">
+        <p class="subtitle">
+          Combining the effects of liquidity expansion, asset-type rotation, and multichain deployment helps explain how 
+          the protocol landscape evolved. Early RWA TVL was concentrated in a handful of private-credit protocols. As new 
+          liquidity entered the system and more chains became viable deployment targets, protocol-level competition 
+          increased and market share spread more evenly across platforms.
+        </p>
+        <p class="subtitle">
+          While the top three protocols still hold a majority of TVL, the Herfindahl–Hirschman Index (HHI) shows a clear 
+          downward trend, indicating decreasing concentration and a healthier, more competitive ecosystem.
+        </p>
+      </div>
+
+      <!-- Protocol TVL Over Time -->
+      <h3 class="section-subheading">Protocol TVL Over Time</h3>
+      <p class="subtitle">
+        Time-series TVL for leading RWA protocols. Demonstrates how new entrants accumulate traction as liquidity and 
+        investor demand expand.
+      </p>
+      <div class="chart-container">
+        <svg id="viz4_ts" width="900" height="420"></svg>
+      </div>
+
+      <!-- Latest Protocol Snapshot -->
+      <h3 class="section-subheading">Latest Protocol Snapshot</h3>
+      <p class="subtitle">
+        Snapshot of current TVL distribution across major RWA protocols, offering a point-in-time view of market 
+        structure.
+      </p>
+      <div class="chart-container">
+        <svg id="viz4_bar" width="900" height="320"></svg>
+      </div>
+
+      <!-- Protocol HHI -->
+      <h3 class="section-subheading">Herfindahl–Hirschman Index (HHI)</h3>
+      <p class="subtitle">
+        The HHI chart summarizes how protocol concentration has evolved, capturing diversification across asset types, 
+        chains, and liquidity environments.
+      </p>
+      <div class="chart-container">
+        <iframe
+          src="assets/altair/altair_protocol_concentration.html"
+          width="900"
+          height="600"
+          style="border:none; border-radius:16px;">
+        </iframe>
+      </div>
+    </section>
+
+    <!-- Tooltip -->
+    <div id="tooltip" class="tooltip"></div>
+
+  </div>
+
+  <!-- Chart Scripts -->
+  <script src="viz.js"></script>
+  <script src="m2_gauge.js"></script>
+
+</body>
+</html>

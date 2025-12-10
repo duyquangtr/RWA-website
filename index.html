@@ -3,120 +3,61 @@
 
 <head>
   <meta charset="UTF-8" />
-  <title>RWA – Tokenization Visualizations</title>
-
-  <!-- D3 -->
-  <script src="https://d3js.org/d3.v7.min.js"></script>
-
-  <!-- Global styles -->
+  <title>RWA – Home</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
   <div class="page">
 
-    <h1>Tokenized RWAs – Liquidity &amp; Capital Allocation</h1>
-    <p class="page-intro">
-      Interactive visualizations based on RWA DeFi protocol data (TVL, chains, asset types, and macro liquidity).
-    </p>
-
-    <!-- ====================== -->
-    <!-- SECTION A: MACRO ENVIRONMENT -->
-    <!-- ====================== -->
-    <h1 class="section-title">A. Macro Liquidity Environment</h1>
-    <p class="section-subtitle">
-      Visualizations showing how macro money supply and on-chain liquidity conditions relate to RWA growth.
-    </p>
-
-    <!-- 0. M2 Liquidity Gauge -->
-    <h2>M2 Liquidity Gauge</h2>
-    <p class="subtitle">
-      Current money supply growth mapped to a liquidity regime from contraction to expansion.
-    </p>
-
-    <div class="chart-container">
-      <div id="m2-gauge"></div>
-      <div id="m2-gauge-legend" class="legend-row"></div>
-
-      <p id="m2-gauge-caption" class="subtitle caption"></p>
-    </div>
+    <!-- Top Navigation -->
+    <header class="top-nav">
+      <div class="nav-inner">
+        <div class="nav-logo">RWA Liquidity Lab</div>
+        <nav class="nav-links">
+          <a href="index.html" class="nav-link active">Home</a>
+          <a href="tasks.html" class="nav-link">Tasks & Data Overview</a>
+          <a href="visualizations.html" class="nav-link">Visualizations</a>
+          <a href="conclusion.html" class="nav-link">Conclusion</a>
+        </nav>
+      </div>
+    </header>
 
 
-    <p id="m2-gauge-caption" class="subtitle caption"></p>
+    <!-- Home / Hero -->
+    <section class="section hero-section">
+      <div class="hero">
+        <div class="hero-content">
+          <p class="hero-kicker">DS4200 · Final Project</p>
+          <h1 class="hero-heading">
+            Analysis of Stablecoin Liquidity and Capital Allocation in RWA Protocols
+          </h1>
+          <p class="hero-subheading">
+            How is RWA tokenization reshaping on-chain liquidity and accelerating the integration
+            of traditional finance with blockchain ecosystems?
+          </p>
+          <p class="hero-text">
+            In this project, we explore how economic conditions drive capital allocation in DeFi's fastest-growing
+            sector: real-world asset (RWA) protocols. RWA platforms bring traditional assets like Treasuries and private
+            credit onto the blockchain. The result: explosive growth and billions in new capital opportunities
+            backed by stablecoin liquidity.
+          </p>
 
-    <!-- 1. Macro Liquidity vs RWA TVL -->
-    <h2>Macro Liquidity vs RWA TVL</h2>
-    <p class="subtitle">RWA TVL vs total stablecoin market cap over time.</p>
-    <div class="chart-container">
-      <svg id="viz1" width="900" height="420"></svg>
-    </div>
+          <div class="hero-button-row">
+            <a href="visualizations.html" class="primary-button">
+              Explore our findings
+            </a>
+          </div>
+        </div>
 
-    <!-- 2. Correlation Between Macro Variables -->
-    <h2>Correlation Between Macro Variables &amp; RWA TVL</h2>
-    <p class="subtitle">
-      Statistical correlations between RWA TVL, stablecoin liquidity, M2 supply, and treasury yields.
-    </p>
-    <div class="chart-container">
-      <iframe src="assets/altair/altair_corr_heatmap.html" width="900" height="700"
-        style="border:none; border-radius:16px;"></iframe>
-    </div>
+        <div class="hero-visual">
+          <img src="assets/images/RWA_guide_map.png"
+            alt="Diagram of how real-world assets are tokenized and used in DeFi" class="hero-image" />
+        </div>
+      </div>
+    </section>
 
-    <!-- ====================== -->
-    <!-- SECTION B: YIELD DYNAMICS & CAPITAL ALLOCATION -->
-    <!-- ====================== -->
-    <h1 class="section-title">B. Yield Regimes & Capital Allocation</h1>
-    <p class="section-subtitle">
-      How U.S. Treasury yield cycles influence investor allocation across tokenized RWA asset types.
-    </p>
-
-    <!-- 3. Yield Regimes vs Asset Composition -->
-    <h2>Yield Regimes vs Asset Composition</h2>
-    <p class="subtitle">
-      RWA asset composition (stacked) vs U.S. 10Y Treasury yield over time.
-    </p>
-    <div class="chart-container">
-      <svg id="viz5" width="900" height="420"></svg>
-    </div>
-
-    <!-- ====================== -->
-    <!-- SECTION C: CHAIN INFRASTRUCTURE -->
-    <!-- ====================== -->
-    <h1 class="section-title">C. On-Chain Infrastructure Growth</h1>
-    <p class="section-subtitle">
-      How RWA liquidity is distributed across blockchains and how chain dominance shifts over time.
-    </p>
-
-    <!-- 4. Chain Allocation Over Time -->
-    <h2>Chain Allocation Over Time</h2>
-    <p class="subtitle">Stacked area of TVL across the top chains.</p>
-    <div class="chart-container">
-      <svg id="viz3" width="900" height="420"></svg>
-    </div>
-
-    <!-- ====================== -->
-    <!-- SECTION D: PROTOCOL LEVEL STRUCTURE -->
-    <!-- ====================== -->
-    <h1 class="section-title">D. Protocol Concentration</h1>
-    <p class="section-subtitle">
-      Concentration of liquidity across leading RWA protocols — both historically and in the latest snapshot.
-    </p>
-
-    <!-- 5. Protocol Concentration (Altair) -->
-    <h2>Protocol Concentration</h2>
-    <p class="subtitle">
-      Interactive view of protocol-level concentration and distribution of RWA TVL.
-    </p>
-    <div class="chart-container">
-      <iframe src="assets/altair/altair_protocol_concentration.html" width="900" height="600"
-        style="border:none; border-radius:16px;"></iframe>
-    </div>
-
-    <div id="tooltip" class="tooltip"></div>
   </div>
-
-  <!-- JS for visualizations -->
-  <script src="viz.js"></script>
-  <script src="m2_gauge.js"></script>
 </body>
 
 </html>
