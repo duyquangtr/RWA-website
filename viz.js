@@ -16,7 +16,7 @@ function hideTooltip() {
 // =====================================================================
 // 1) Macro Liquidity vs RWA TVL
 // =====================================================================
-d3.csv("assets/data/viz1_macro_vs_rwa.csv").then(raw => {
+d3.csv("assets/data/viz1_macro_vs_rwa_with_m2.csv").then(raw => {
   // Parse + sort
   const data = raw.map(d => ({
     date: new Date(d.date),
